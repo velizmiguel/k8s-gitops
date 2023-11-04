@@ -1,0 +1,8 @@
+---
+clusterName: my-cluster
+endpoint: https://10.0.10.62:6443
+nodes:
+  - hostname: master
+    controlPlane: true
+    ipAddress: 10.0.10.62
+    installDisk: /dev/sda
