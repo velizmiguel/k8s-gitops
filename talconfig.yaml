@@ -2,23 +2,44 @@
 clusterName: super-cluster
 talosVersion: v1.5.4
 kubernetesVersion: v1.28.2
-endpoint: https://10.0.10.60:6443
+endpoint: https://k8s.${domainName}:6443
 allowSchedulingOnMasters: true
-cniConfig:
-  name: none
+#cniConfig:
+#  name: none
 nodes:
-  - hostname: master_microserver_62
+  - hostname: master-microserver-81
     controlPlane: true
-    ipAddress: 10.0.10.62
+    ipAddress: 10.0.10.81
     installDisk: /dev/sda
-    networkInterfaces:
-      - interface: eth0
-        vip:
-          ip: 10.0.10.60
+#    networkInterfaces:
+#      - interface: eth0
+#        addresses:
+#          - 10.0.10.81/24
+#        routes:
+#          - network: 0.0.0.0/0
+#            gateway: 10.0.10.1
+#        vip:
+#          ip: 10.0.10.80
 #  - hostname: worker_microserver_63
 #    controlPlane: false
 #    ipAddress: 10.0.10.63
 #    installDisk: /dev/sda
 
 
+controlPlane:
+  patches:
+    - |-
+      machine:
+        time:
+          disabled: false
+          servers:
+            - 10.0.10.1
 
+worker:
+  patches:
+    - |-
+      machine:
+        time:
+          disabled: false
+          servers:
+            - 10.0.10.1
