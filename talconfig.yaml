@@ -1,8 +1,24 @@
 ---
-clusterName: my-cluster
-endpoint: https://10.0.10.62:6443
+clusterName: super-cluster
+talosVersion: v1.5.4
+kubernetesVersion: v1.28.2
+endpoint: https://10.0.10.60:6443
+allowSchedulingOnMasters: true
+cniConfig:
+  name: none
 nodes:
-  - hostname: master
+  - hostname: master_microserver_62
     controlPlane: true
     ipAddress: 10.0.10.62
     installDisk: /dev/sda
+    networkInterfaces:
+      - interface: eth0
+        vip:
+          ip: 10.0.10.60
+#  - hostname: worker_microserver_63
+#    controlPlane: false
+#    ipAddress: 10.0.10.63
+#    installDisk: /dev/sda
+
+
+
