@@ -28,7 +28,7 @@ spec:
     # Installs a debugging toolbox deployment
     toolbox:
       # -- Enable Ceph debugging pod deployment. See [toolbox](../Troubleshooting/ceph-toolbox.md)
-      enabled: false
+      enabled: true
       # -- Toolbox image, defaults to the image used by the Ceph cluster
       image: #quay.io/ceph/ceph:v17.2.6
       # -- Toolbox tolerations
