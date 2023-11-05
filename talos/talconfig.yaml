@@ -20,11 +20,25 @@ nodes:
 #            gateway: 10.0.10.1
 #        vip:
 #          ip: 10.0.10.80
-#  - hostname: worker_microserver_63
-#    controlPlane: false
-#    ipAddress: 10.0.10.63
-#    installDisk: /dev/sda
+  - hostname: master-microserver-82
+    controlPlane: true
+    ipAddress: 10.0.10.82
+    installDisk: /dev/sda
 
+  - hostname: worker-microserver-83
+    controlPlane: false
+    ipAddress: 10.0.10.83
+    installDisk: /dev/sda
+
+  - hostname: worker-microserver-84
+    controlPlane: false
+    ipAddress: 10.0.10.84
+    installDisk: /dev/sda
+
+  - hostname: worker-microserver-85
+    controlPlane: false
+    ipAddress: 10.0.10.85
+    installDisk: /dev/sda
 
 controlPlane:
   patches:
