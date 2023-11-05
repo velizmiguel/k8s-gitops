@@ -26,19 +26,19 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-  values:
-#    monitoring:
-#      enabled: true
-#      createPrometheusRules: true
-    ingress:
-      dashboard:
-        ingressClassName: internal
-        host:
-          name: &host rook.veliz.io
-          path: /
-        tls:
-          - hosts:
-              - *host
+#  values:
+##    monitoring:
+##      enabled: true
+##      createPrometheusRules: true
+#    ingress:
+#      dashboard:
+#        ingressClassName: internal
+#        host:
+#          name: &host rook.veliz.io
+#          path: /
+#        tls:
+#          - hosts:
+#              - *host
     toolbox:
       enabled: true
     configOverride: |
