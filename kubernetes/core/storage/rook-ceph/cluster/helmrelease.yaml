@@ -544,11 +544,11 @@ spec:
             activeStandby: true
             resources:
               limits:
-                cpu: "2000m"
-                memory: "4Gi"
-              requests:
                 cpu: "1000m"
-                memory: "4Gi"
+                memory: "2Gi"
+              requests:
+                cpu: "500m"
+                memory: "2Gi"
             priorityClassName: system-cluster-critical
         storageClass:
           enabled: true
