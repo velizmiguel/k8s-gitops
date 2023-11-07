@@ -10,7 +10,7 @@ nodes:
   - hostname: master-microserver-81
     controlPlane: true
     ipAddress: 10.0.10.81
-    installDisk: /dev/sda
+    installDisk: /dev/nvme0n1
 #    networkInterfaces:
 #      - interface: eth0
 #        addresses:
@@ -23,22 +23,22 @@ nodes:
   - hostname: master-microserver-82
     controlPlane: true
     ipAddress: 10.0.10.82
-    installDisk: /dev/sda
+    installDisk: /dev/nvme0n1
 
-  - hostname: worker-microserver-83
-    controlPlane: false
+  - hostname: master-microserver-83
+    controlPlane: true
     ipAddress: 10.0.10.83
-    installDisk: /dev/sda
+    installDisk: /dev/nvme0n1
 
   - hostname: worker-microserver-84
     controlPlane: false
     ipAddress: 10.0.10.84
-    installDisk: /dev/sda
+    installDisk: /dev/nvme0n1
 
   - hostname: worker-microserver-85
     controlPlane: false
     ipAddress: 10.0.10.85
-    installDisk: /dev/sda
+    installDisk: /dev/nvme0n1
 
 controlPlane:
   patches:

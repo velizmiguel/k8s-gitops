@@ -14,7 +14,7 @@ export TALOSCONFIG=~/k8s-gitops/talos/clusterconfig/talosconfig
 ```
 talosctl -n 10.0.10.81 apply-config --file clusterconfig/super-cluster-master-microserver-81.yaml --insecure
 talosctl -n 10.0.10.82 apply-config --file clusterconfig/super-cluster-master-microserver-82.yaml --insecure
-talosctl -n 10.0.10.83 apply-config --file clusterconfig/super-cluster-worker-microserver-83.yaml --insecure
+talosctl -n 10.0.10.83 apply-config --file clusterconfig/super-cluster-master-microserver-83.yaml --insecure
 talosctl -n 10.0.10.84 apply-config --file clusterconfig/super-cluster-worker-microserver-84.yaml --insecure
 talosctl -n 10.0.10.85 apply-config --file clusterconfig/super-cluster-worker-microserver-85.yaml --insecure
 ```
