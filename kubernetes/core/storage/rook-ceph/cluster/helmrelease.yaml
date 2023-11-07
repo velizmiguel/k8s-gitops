@@ -360,9 +360,28 @@ spec:
         osd: system-node-critical
         mgr: system-cluster-critical
 
-      storage: # cluster level storage configuration and selection
-        useAllNodes: true
-        useAllDevices: true
+      storage:
+        useAllNodes: false
+        useAllDevices: false
+        config:
+          osdsPerDevice: "1"
+        nodes: #talosctl ls /dev/disk/by-id/ -n 10.0.10.84 --endpoints 10.0.10.84 --talosconfig=./clusterconfig/talosconfig
+          - name: master-microserver-81
+            devices:
+              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K302697
+          - name: master-microserver-82
+            devices:
+              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K114238
+          - name: master-microserver-83
+            devices:
+              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K206525
+          - name: worker-microserver-84
+            devices:
+              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K611110
+          - name: worker-microserver-85
+            devices:
+              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K205562
+
         # deviceFilter:
         # config:
         #   crushRoot: "custom-root" # specify a non-default root label for the CRUSH map
