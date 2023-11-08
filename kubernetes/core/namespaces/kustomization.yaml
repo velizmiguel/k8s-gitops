@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - namespace-home.yaml
 - namespace-rook-ceph.yaml
+- namespace-cert-manager.yaml
 #- namespace-longhorn.yaml
