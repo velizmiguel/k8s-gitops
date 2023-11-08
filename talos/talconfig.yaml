@@ -48,7 +48,7 @@ nodes:
   - hostname: worker-superserver-92
     controlPlane: false
     ipAddress: 10.0.10.92
-    installDisk: /dev/sdb
+    installDisk: /dev/sda
 
   - hostname: worker-superserver-93
     controlPlane: false

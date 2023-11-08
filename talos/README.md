@@ -20,6 +20,10 @@ talosctl -n 10.0.10.85 apply-config --file clusterconfig/super-cluster-worker-mi
 
 
 talosctl -n 10.0.10.91 apply-config --file clusterconfig/super-cluster-worker-superserver-91.yaml --insecure
+talosctl -n 10.0.10.92 apply-config --file clusterconfig/super-cluster-worker-superserver-92.yaml --insecure
+talosctl -n 10.0.10.93 apply-config --file clusterconfig/super-cluster-worker-superserver-93.yaml --insecure
+
+
 
 ```
 

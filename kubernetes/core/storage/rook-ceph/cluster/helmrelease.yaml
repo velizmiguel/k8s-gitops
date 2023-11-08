@@ -44,11 +44,12 @@ spec:
           drop: ["ALL"]
       # -- Toolbox resources
       resources:
-        requests:
-          cpu: 15m
-          memory: 105Mi
         limits:
-          memory: 105Mi
+          cpu: "500m"
+          memory: "1Gi"
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
       # -- Set the priority class for the toolbox if desired
       priorityClassName:
 
@@ -283,22 +284,25 @@ spec:
       resources:
         mgr:
           limits:
-            memory: "106Mi"
+            cpu: "1000m"
+            memory: "1Gi"
           requests:
-            cpu: "100m"
-            memory: "106Mi"
+            cpu: "500m"
+            memory: "512Mi"
         mon:
           limits:
-            memory: "107Mi"
+            cpu: "2000m"
+            memory: "2Gi"
           requests:
-            cpu: "100m"
-            memory: "107Mi"
+            cpu: "1000m"
+            memory: "1Gi"
         osd:
           limits:
-            memory: "108Mi"
+            cpu: "2000m"
+            memory: "4Gi"
           requests:
-            cpu: "100m"
-            memory: "108Mi"
+            cpu: "1000m"
+            memory: "4Gi"
         prepareosd:
           # limits: It is not recommended to set limits on the OSD prepare job
           #         since it's a one-time burst for memory that must be allowed to
@@ -309,42 +313,42 @@ spec:
           #         OSDs ; for larger devices 2Gi may be required.
           #         cf. https://github.com/rook/rook/pull/11103
           requests:
-            cpu: "100m"
+            cpu: "500m"
             memory: "50Mi"
         mgr-sidecar:
           limits:
-            cpu: "100m"
+            cpu: "500m"
             memory: "100Mi"
           requests:
             cpu: "100m"
             memory: "40Mi"
         crashcollector:
           limits:
-            cpu: "100m"
+            cpu: "500m"
             memory: "60Mi"
           requests:
             cpu: "100m"
             memory: "60Mi"
         logcollector:
           limits:
-            cpu: "100m"
+            cpu: "500m"
             memory: "1Gi"
           requests:
             cpu: "100m"
             memory: "100Mi"
         cleanup:
           limits:
-            cpu: "100m"
+            cpu: "500m"
             memory: "1Gi"
           requests:
-            cpu: "100m"
+            cpu: "500m"
             memory: "100Mi"
         exporter:
           limits:
-            cpu: "100m"
+            cpu: "250m"
             memory: "128Mi"
           requests:
-            cpu: "100m"
+            cpu: "50m"
             memory: "50Mi"
 
       # The option to automatically remove OSDs that are out and are safe to destroy.
@@ -362,21 +366,15 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes: #talosctl ls /dev/disk/by-id/ -n 10.0.10.84 --endpoints 10.0.10.84 --talosconfig=./clusterconfig/talosconfig
-          - name: master-microserver-81
+          - name: worker-superserver-91
             devices:
-              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K302697
-          - name: master-microserver-82
+              - name: /dev/disk/by-id/nvme-WDC_WDS500G2B0C-00PXH0_20492W804589
+          - name: worker-superserver-92
             devices:
-              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K114238
-          - name: master-microserver-83
+              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2110E5832C5F
+          - name: worker-superserver-93
             devices:
-              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K206525
-          - name: worker-microserver-84
-            devices:
-              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K611110
-          - name: worker-microserver-85
-            devices:
-              - name: /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000L7_S35BNX0K205562
+              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2110E5833150
 
         # deviceFilter:
         # config:
@@ -540,10 +538,11 @@ spec:
             activeStandby: true
             resources:
               limits:
-                memory: "109Mi"
+                cpu: "2000m"
+                memory: "4Gi"
               requests:
-                cpu: "100m"
-                memory: "109Mi"
+                cpu: "1000m"
+                memory: "4Gi"
             priorityClassName: system-cluster-critical
         storageClass:
           enabled: true
@@ -613,10 +612,11 @@ spec:
             port: 80
             resources:
               limits:
-                memory: "110Mi"
+                cpu: "2000m"
+                memory: "2Gi"
               requests:
-                cpu: "100m"
-                memory: "110Mi"
+                cpu: "1000m"
+                memory: "1Gi"
             # securePort: 443
             # sslCertificateRef:
             instances: 1
