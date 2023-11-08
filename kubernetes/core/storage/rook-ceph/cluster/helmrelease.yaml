@@ -309,42 +309,42 @@ spec:
           #         OSDs ; for larger devices 2Gi may be required.
           #         cf. https://github.com/rook/rook/pull/11103
           requests:
-            cpu: "500m"
+            cpu: "100m"
             memory: "50Mi"
         mgr-sidecar:
           limits:
-            cpu: "500m"
+            cpu: "100m"
             memory: "100Mi"
           requests:
             cpu: "100m"
             memory: "40Mi"
         crashcollector:
           limits:
-            cpu: "500m"
+            cpu: "100m"
             memory: "60Mi"
           requests:
             cpu: "100m"
             memory: "60Mi"
         logcollector:
           limits:
-            cpu: "500m"
+            cpu: "100m"
             memory: "1Gi"
           requests:
             cpu: "100m"
             memory: "100Mi"
         cleanup:
           limits:
-            cpu: "500m"
+            cpu: "100m"
             memory: "1Gi"
           requests:
-            cpu: "500m"
+            cpu: "100m"
             memory: "100Mi"
         exporter:
           limits:
-            cpu: "250m"
+            cpu: "100m"
             memory: "128Mi"
           requests:
-            cpu: "50m"
+            cpu: "100m"
             memory: "50Mi"
 
       # The option to automatically remove OSDs that are out and are safe to destroy.
