@@ -3,7 +3,7 @@ clusterName: super-cluster
 talosVersion: v1.5.4
 kubernetesVersion: v1.28.2
 endpoint: https://k8s.${domainName}:6443
-allowSchedulingOnMasters: true
+allowSchedulingOnMasters: false
 #cniConfig:
 #  name: none
 nodes:
@@ -39,6 +39,21 @@ nodes:
     controlPlane: false
     ipAddress: 10.0.10.85
     installDisk: /dev/sda
+
+  - hostname: worker-superserver-91
+    controlPlane: false
+    ipAddress: 10.0.10.91
+    installDisk: /dev/sdb
+
+  - hostname: worker-superserver-92
+    controlPlane: false
+    ipAddress: 10.0.10.92
+    installDisk: /dev/sdb
+
+  - hostname: worker-superserver-93
+    controlPlane: false
+    ipAddress: 10.0.10.93
+    installDisk: /dev/sdb
 
 controlPlane:
   patches:
