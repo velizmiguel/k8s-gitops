@@ -371,10 +371,10 @@ spec:
               - name: /dev/disk/by-id/nvme-WDC_WDS500G2B0C-00PXH0_20492W804589
           - name: worker-superserver-92
             devices:
-              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2110E5832C5F
+              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2110E5833150
           - name: worker-superserver-93
             devices:
-              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2110E5833150
+              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2110E5832C5F
 
         # deviceFilter:
         # config:
