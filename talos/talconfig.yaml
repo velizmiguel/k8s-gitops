@@ -48,6 +48,9 @@ controlPlane:
           disabled: false
           servers:
             - 10.0.10.1
+  inlinePatch:
+    cluster:
+      allowSchedulingOnMasters: true
 
 worker:
   patches:
