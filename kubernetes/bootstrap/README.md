@@ -1,4 +1,4 @@
-# k8s-gitops
+# Bootstrap
 
 
 ## Bootstrap Flux:
@@ -12,3 +12,11 @@ flux bootstrap github \
   --personal
 
 
+## Apply Cluster Configuration
+
+_These cannot be applied with `kubectl` in the regular fashion due to be encrypted with sops_
+
+```sh
+sops --decrypt kubernetes/bootstrap/flux/age-key.sops.yaml | kubectl apply -f -
+sops --decrypt kubernetes/flux/vars/vault-secrets.sops.yaml | kubectl apply -f -
+```
