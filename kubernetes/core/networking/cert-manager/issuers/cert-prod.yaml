@@ -3,14 +3,8 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: wildcard-cert
-  namespace: default
+  namespace: networking
 spec:
-  secretTemplate:
-    annotations:
-      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
-      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: ""
-      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
-      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: ""
   secretName: wildcard-cert-tls
   issuerRef:
     name: letsencrypt-prod
@@ -18,4 +12,4 @@ spec:
   commonName: ${SECRET_DOMAIN}
   dnsNames:
     - "*.${SECRET_DOMAIN}"
-    - "${SECRET_DOMAIN}"s
+    - "${SECRET_DOMAIN}"
