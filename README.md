@@ -27,3 +27,8 @@ sops --age=age1rtcaj34psg3fgeepa5dfgxa2f5s7dyvt5sefnsaaq6zugzmgxpzsvjjzft --encr
 ```
 
 And finally set the decryption secret in the Flux Kustomization to sops-age.
+
+
+### How to get secrets:
+
+kubectl -n flux-system get secret cluster-secrets -o json | jq '.data | map_values(@base64d)'

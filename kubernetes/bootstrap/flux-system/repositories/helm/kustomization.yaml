@@ -5,3 +5,4 @@ resources:
 - rook-ceph-charts.yaml
 - external-secrets.yaml
 - bjw-s.yaml
+- jetstack.yaml
