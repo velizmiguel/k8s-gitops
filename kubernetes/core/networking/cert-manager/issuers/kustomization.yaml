@@ -6,3 +6,4 @@ resources:
   - externalsecret.yaml
   - issuer-staging.yaml
   - issuer-prod.yaml
+  - cert-staging.yaml
