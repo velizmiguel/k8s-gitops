@@ -6,3 +6,4 @@ resources:
 - external-secrets.yaml
 - bjw-s.yaml
 - jetstack.yaml
+- ingress-nginx.yaml
