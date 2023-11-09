@@ -4,3 +4,4 @@ resources:
 - namespaces
 - storage
 - kube-system
+- networking
