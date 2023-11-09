@@ -27,8 +27,8 @@ spec:
     keepHistory: false
   values:
     replicaCount: 1
-    installCRDs: false
+    installCRDs: true
     webhook:
-      replicaCount: 1
+      enabled: true
     cainjector:
       replicaCount: 1
