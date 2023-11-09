@@ -18,5 +18,5 @@ _These cannot be applied with `kubectl` in the regular fashion due to be encrypt
 
 ```sh
 sops --decrypt kubernetes/bootstrap/flux-system/age-key.sops.yaml | kubectl apply -f -
-sops --decrypt kubernetes/flux/vars/vault-secrets.sops.yaml | kubectl apply -f -
+sops --decrypt kubernetes/bootstrap/flux-system/secrets/vault-secrets.sops.yaml | kubectl apply -f -
 ```
