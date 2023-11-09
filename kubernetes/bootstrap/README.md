@@ -17,6 +17,6 @@ flux bootstrap github \
 _These cannot be applied with `kubectl` in the regular fashion due to be encrypted with sops_
 
 ```sh
-sops --decrypt kubernetes/bootstrap/flux/age-key.sops.yaml | kubectl apply -f -
+sops --decrypt kubernetes/bootstrap/flux-system/age-key.sops.yaml | kubectl apply -f -
 sops --decrypt kubernetes/flux/vars/vault-secrets.sops.yaml | kubectl apply -f -
 ```
