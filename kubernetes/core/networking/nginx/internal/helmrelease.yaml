@@ -54,12 +54,12 @@ spec:
         serviceMonitor:
           enabled: false
 
-      service:
-        type: LoadBalancer
-        externalTrafficPolicy: Cluster
-
-      publishService:
-        enabled: true
+#      service:
+#        type: LoadBalancer
+#        externalTrafficPolicy: Cluster
+#
+#      publishService:
+#        enabled: true
 
       updateStrategy:
         type: RollingUpdate
