@@ -49,6 +49,10 @@ spec:
               operator: In
               values:
                 - nginx-internal
+      metrics:
+        enabled: false
+        serviceMonitor:
+          enabled: false
 
       service:
         type: LoadBalancer
