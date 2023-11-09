@@ -26,10 +26,9 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    replicaCount: 2
-    installCRDs: true
-    podDnsPolicy: None
+    replicaCount: 1
+    installCRDs: false
     webhook:
-      replicaCount: 2
+      replicaCount: 1
     cainjector:
-      replicaCount: 2
+      replicaCount: 1
